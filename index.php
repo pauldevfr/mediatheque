@@ -53,6 +53,4 @@ include_once "includes/nav.php";
 
 <?php
 
-echo "<h1>youpi ca marche !</h1>";
-
 include_once "includes/footer.php";
