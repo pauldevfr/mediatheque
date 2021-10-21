@@ -37,13 +37,24 @@ if (!empty($_POST)) {
         $query->bindValue(":ville", $Ville, PDO::PARAM_STR);
 
         $query->execute();
+
+        // on recupere l'id du nouvel utilisateur
+        $id = $db->lastInsertId();
+
+        session_start();
+
+        $_SESSION["habitant"] = [
+            "id" => $id,
+            "prénom" => $Fname,
+            "nom" => $Lname,
+            "mail" => $_POST["E-mail"]
+        ];
+
+        header("location: catalogue.php");
     } else {
         die("le formulaire est incomplet");
     }
 }
-
-
-
 
 
 $title = "Créer un Compte";
