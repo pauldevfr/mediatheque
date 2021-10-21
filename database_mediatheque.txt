@@ -1,0 +1,53 @@
+CREATE DATABASE Mediatheque;
+
+CREATE TABLE habitants
+(
+	Id INT PRIMARY KEY NOT null AUTO_INCREMENT,
+    hab_Lname varchar(30) NOT null,
+    hab_Fname varchar(50) NOT null,
+    hab_email varchar(80) NOT null,
+    hab_birthDate DATE NOT null,
+    hab_adresse varchar(150) NOT null,
+    hab_compAdresse varchar(150),
+    hab_codePostal INT NOT null,
+    hab_ville varchar(80) NOT null,
+    hab_password varchar(250) NOT null
+);
+
+CREATE TABLE employes
+(
+    id INT PRIMARY KEY NOT null AUTO_INCREMENT,
+    employe_Lname varchar(30) NOT null,
+    employe_Fname varchar(50) NOT null,
+    employe_email varchar(80) NOT null,
+    employe_password varchar(250) NOT null
+);
+
+CREATE TABLE books
+(
+    id INT PRIMARY KEY NOT null AUTO_INCREMENT,
+    book_title varchar(100) NOT null,
+    book_image varchar (250) NOT null,
+    book_birthDate Date NOT null,
+    book_description text NOT null,
+    book_author varchar(80) NOT null,
+    book_genre varchar(150) NOT null
+);
+
+CREATE TABLE takeBook
+(
+    id_habitants INT NOT null,
+    id_books INT NOT null,
+    FOREIGN KEY(id_habitants) REFERENCES habitants(id),
+    FOREIGN KEY(id_books) REFERENCES books(id),
+    takeBookDate Date NOT null
+);
+
+CREATE TABLE manageBook
+(
+    id_manage_books INT NOT null,
+    id_manage_habitants INT NOT null,
+    FOREIGN KEY(id_manage_books) REFERENCES books(id),
+    FOREIGN KEY(id_manage_habitants) REFERENCES habitants(id),
+    bookDate Date NOT null
+)
