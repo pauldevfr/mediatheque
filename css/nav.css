@@ -1,0 +1,16 @@
+.navbar-light .navbar-nav .nav-link.active {
+    color: #1b7a72;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #2bb3a7;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #1b7a72;
+}
+
+.navbar-toggler:focus {
+    -webkit-box-shadow: 0px 0px 0px 5px #2BB3A7; 
+    box-shadow: 0px 0px 0px 5px #2BB3A7;
+}

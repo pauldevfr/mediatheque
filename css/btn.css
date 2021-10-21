@@ -1,0 +1,28 @@
+.btn-primary {
+    background-color: #2bb3a7;
+    border: #2bb3a7;
+    transition: .2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #1b7a72;
+    transform: scale(1.1);
+}
+
+.btn-primary:active {
+    background-color: #1b7a72;
+}
+
+.btn-primary:focus {
+    background-color: #1b7a72;
+    border-color: #1b7a72;
+    box-shadow: none;
+}
+
+.btn-primary:hover:focus {
+    box-shadow: none;
+}
+
+.btn-primary:active:focus {
+    box-shadow: none;
+}
