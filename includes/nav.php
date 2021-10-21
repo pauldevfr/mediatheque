@@ -9,18 +9,24 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="../index.php">Accueil</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../catalogue.php">Découvrir le catalogue</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../creer-un-compte.php">Créer un compte</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../se-connecter.php">Se connecter</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../deconnexion.php">Deconnexion</a>
-                    </li>
+                    <?php if (!isset($_SESSION["habitant"])) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../creer-un-compte.php">Créer un compte</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../se-connecter.php">Se connecter</a>
+                        </li>
+                    <?php else : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../catalogue.php">Découvrir le catalogue</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../ajouter-un-livre.php">Ajouter un livre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../deconnexion.php">Deconnexion</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>

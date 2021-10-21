@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+if (isset($_SESSION["habitant"])) {
+    header("location: catalogue.php");
+    exit;
+}
 
 if (!empty($_POST)) {
     if (
@@ -28,7 +33,6 @@ if (!empty($_POST)) {
             die("l'utilisateur et/ou le mot de passe n'existe pas");
         }
 
-        session_start();
 
         $_SESSION["habitant"] = [
             "id" => $habitant["id"],

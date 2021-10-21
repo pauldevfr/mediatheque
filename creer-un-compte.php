@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+if (isset($_SESSION["habitant"])) {
+    header("location: catalogue.php");
+    exit;
+}
 //on verifie sir le formulaire a etais envoyer
 
 if (!empty($_POST)) {
@@ -41,7 +46,6 @@ if (!empty($_POST)) {
         // on recupere l'id du nouvel utilisateur
         $id = $db->lastInsertId();
 
-        session_start();
 
         $_SESSION["habitant"] = [
             "id" => $id,

@@ -1,5 +1,11 @@
 <?php
 
+session_start();
+if (!isset($_SESSION["habitant"])) {
+    header("location: index.php");
+    exit;
+}
+
 $title = "catalogue";
 
 include_once "includes/header.php";

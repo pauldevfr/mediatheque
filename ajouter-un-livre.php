@@ -1,5 +1,11 @@
 <?php
 
+session_start();
+if (!isset($_SESSION["habitant"])) {
+    header("location: index.php");
+    exit;
+}
+
 $title = "Ajouter un livre";
 
 include_once "includes/header.php";
